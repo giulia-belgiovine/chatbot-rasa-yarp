@@ -8,5 +8,5 @@ pip3 install rasa
 #command line interface
 rasa train (to generate new models after changing the nlu)
 rasa run actions
-# on another shell:
+#on another shell:
 rasa shell --endpoints endpoints.yml
