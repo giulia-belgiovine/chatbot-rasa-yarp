@@ -1,0 +1,48 @@
+version: "2.0"
+
+rules:
+  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+    steps:
+      - intent: nlu_fallback
+      - action: action_default_fallback
+
+  - rule: Ask lab
+    steps:
+     - intent: ask_lab
+     - action: action_read_lab
+
+  - rule: Ask lab
+    steps:
+      - intent: room
+      - action: action_read_lab
+
+  - rule: Ask lab
+    steps:
+      - intent: day
+      - action: action_read_lab
+
+  - rule: Sii educato
+    steps:
+      - intent: thank_you
+      - action: utter_you_are_welcome
+
+  - rule: Saluta
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Spiega cosa sai fare
+    steps:
+      - intent: ask_info
+      - action: utter_info
+
+#  - rule: ask info
+#    steps:
+#      - intent: ask_info
+#      - action: utter_info
+
+#  - rule: false recognition
+#    steps:
+#      - intent: deny
+#      - action: utter_false_known
+#      - action: utter_ask_second_time

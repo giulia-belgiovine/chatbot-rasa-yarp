@@ -1,0 +1,48 @@
+version: "2.0"
+
+stories:
+    - story: Unknown Person true
+      steps:
+       - intent: greet
+       - action: utter_greet_person
+       - slot_was_set:
+           - unknown_person: True
+       - action: generalinfo_form
+       - active_loop: generalinfo_form
+       - slot_was_set:
+          - first_name: Jonas
+          - name_spelled_correctly: True
+          - age: 24
+          - country: francia
+          - color: rosso
+          - general: "Io sono un ingegnere"
+
+
+    - story: Known person True
+      steps:
+      - slot_was_set:
+        - unknown_person: False
+      - intent: greet
+      - action: utter_greet_person
+      - intent: greet
+      - action: action_retrieve_information
+
+    - story: Wrong user name
+      steps:
+       - intent: greet
+       - action: utter_greet_person
+       - slot_was_set:
+           - unknown_person: False
+       - intent: deny
+       - action: action_wrong_person
+       - action: generalinfo_form
+       - active_loop: generalinfo_form
+       - slot_was_set:
+          - first_name: Jonas
+          - name_spelled_correctly: True
+          - age: 24
+          - country: francia
+          - color: rosso
+          - general: "Io lavoro con i robot"
+#          - music: pop
+

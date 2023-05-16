@@ -1,0 +1,176 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - ciao
+    - cia
+    - Ciao!
+    - ciao iCub
+    - salve
+    - heila
+    - buongiorno
+    - buonasera
+    - buon pomeriggio
+    - ciao amico
+    - Ciao
+- intent: goodbye
+  examples: |
+    - bye bye
+    - ciao
+    - arrivederci
+    - a dopo
+    - ci vediamo!
+    - ci vediamo dopo
+    - tanti saluti
+    - buona giornata
+    - ci si vede in giro
+    - ci si vede
+- intent: affirm
+  examples: |
+    - yes
+    - si
+    - certo
+    - infatti
+    - è così
+    - giusto
+    - corretto
+    - proprio così
+    - vero
+- intent: deny
+  examples: |
+    - no
+    - n
+    - mai
+    - Non credo
+    - non mi piace
+    - assolutamente no
+    - per niente
+    - ma anche no
+    - sbagliato
+    - non è così
+    - non e giusto
+    - no e giusto
+    - non sono io
+
+- intent: mood_great
+  examples: |
+    - perfetto
+    - grande
+    - fantastico
+    - bene
+    - meraviglioso
+    - mi sento benissimo
+    - mai stato meglio
+    - alla grande
+    - mi sento un re
+    - super bene
+- intent: mood_unhappy
+  examples: |
+    - giornataccia
+    - sono trsite
+    - non mi sento bene
+    - sono deluso
+    - super triste
+    - sono così triste
+    - molto triste
+    - un schifo
+    - infelice
+    - non bene
+    - non molto bene
+    - ho avuto una brutta giornata
+
+- intent: gender
+  examples: |
+    - si sono una [donna](gender)
+    - si, il mio genere è [femminile](gender)
+    - si sono un [uomo](gender)
+    - si, il mio genere è [maschile](gender)
+    - il mio genere è [femmina](gender)
+    - il mio genere è [maschio](gender)
+    - Preferisco non specificare
+- intent: color
+  examples: |
+    - Il mio colore preferito è [rosso](color)
+    - Io amo il [blu](color)
+    - Mi piace molto il [giallo](color)
+    - Non saprei dire qual è il mio colore preferito
+    - Non ho un colore preferito
+    - Mi piacciono tutti i colori!
+    - [bianco](color)
+    - [verde](color)
+    - [viola](color)
+    - [rosso](color)
+    - [giallo](color)
+- intent: age
+  examples: |
+    - Ho [21](age) anni
+    - [30](age) anni
+    - [25](age)
+    - io ho [23](age) anni
+    - [28](age)
+    - ho [24](age) anni
+#- intent: country
+#  examples: |
+#    - Io vengo dall'[Italia](country)
+#    - [Francia](country)
+#    - [Germania](country)
+#    - Il mio paese d'origine è la [Spagna](country)
+#    - [Colombia](country)
+#    - [Estonia](country)
+#    - [Australia](country)
+#    - [congo](country)
+#    - [bulgaria](country)
+#    - [Grenada](country)
+#    - [Honduras](country)
+#    - [Kazakhstan](country)
+#    - [francia](country)
+- intent: music
+  examples: |
+    - A me piace la musica [rock](music)
+    - Mi piace ascoltare il [Pop](music)
+    - [Musica classica](music)
+    - Il mio genere musicale preferito è il [jazz](music)
+    - Mi piace la musica [hip-hop](music)
+    - [disco](music)
+    - [musica commerciale](music)
+    - [tecno](music)
+    - Ascolto un po' tutto, ma preferisco la musica [pop](music)
+    - [pop](music)
+    - [rock](music)
+    - [pop](music)
+
+
+- intent: nlu_fallback
+  examples: |
+    - pollo fritto
+    - brebis
+#
+#- intent: first_name
+#  examples: |
+#    - mi chiamo [jonas](first_name)
+#    - [franco](first_name)
+#    - Mi chiamo [alessandra](first_name)
+#    - mi chiamo [francesco](first_name)
+#    - il mio nome e [marco](first_name)
+#    - [Matthew](first_name)
+#    - [Daniel](first_name)
+#    - [James](first_name)
+#    - [Sarah](first_name)
+#    - [Anthony](first_name)
+#    - [Antoine](first_name)
+#    - mi chiamo [mathieu](first_name)
+#    - mi chiamo [jules](first_name)
+#    - mi chiamo [damiens](first_name)
+#    - [Jonas](first_name)
+- lookup: color
+  examples: |
+    - rosso
+    - giallo
+    - blu
+    - marrone
+    - nero
+    - bianco
+    - verde
+    - rosa
+    - viola

@@ -1,0 +1,176 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - ciao
+    - Ciao
+    - cia
+    - Ciao!
+    - ciao iCub
+    - salve
+    - heila
+    - buongiorno
+    - buonasera
+    - buon pomeriggio
+    - ciao amico
+- intent: goodbye
+  examples: |
+    - bye bye
+    - ciao
+    - arrivederci
+    - a dopo
+    - ci vediamo!
+    - ci vediamo dopo
+    - tanti saluti
+    - buona giornata
+    - ci si vede in giro
+    - ci si vede
+- intent: affirm
+  examples: |
+    - yes
+    - si
+    - certo
+    - infatti
+    - è così
+    - giusto
+    - corretto
+    - proprio così
+- intent: deny
+  examples: |
+    - no
+    - n
+    - mai
+    - hai sbagliato
+    - non sono io
+    - non sono [giulia](rec_person)
+    - non sono [jonas](rec_person)
+    - Non credo
+    - assolutamente no
+    - per niente
+    - ma anche no
+    - sbagliato
+    - non è così
+    - non è il mio nome
+    - non mi chiamo così
+    - questo nome è sbagliato
+    - mi hai scambiato per qualcun altro
+    - mi dispiace, non sono io
+    - mi dispiace, ti sbagli
+    - scusa ma non sono [linda](rec_person)
+- intent: mood_great
+  examples: |
+    - perfetto
+    - grande
+    - fantastico
+    - bene
+    - meraviglioso
+    - mi sento benissimo
+    - mai stato meglio
+    - alla grande
+    - mi sento un re
+    - super bene
+- intent: mood_unhappy
+  examples: |
+    - giornataccia
+    - sono trsite
+    - non mi sento bene
+    - sono deluso
+    - super triste
+    - sono così triste
+    - molto triste
+    - un schifo
+    - infelice
+    - non bene
+    - non molto bene
+    - ho avuto una brutta giornata
+- intent: thank_you
+  examples: |
+    - grazie mille!
+    - ok, grazie
+    - grazie mille iCub
+    - grazie, gentilissismo
+    - Grazie iCub
+    - Grazi
+    - grazie
+    - grazie infinite
+    - Grazie
+- intent: ask_info
+  examples: |
+    - cosa sai fare?
+    - cosa puoi fare per me?
+    - cose puoi dirmi?
+    - cosa puoi fare?
+    - come puoi aiutarmi?
+    - come puoi essermi d'aiuto?
+    - come potresti aiutarmi?
+    - come potresti essermi d'aiuto?
+    - cosa sai dirmi?
+    - cosa sai fare per me?
+- intent: ask_menu
+  examples: |
+    - vorrei sapere il menù della mensa
+    - vorrei sapere il menu di oggi
+    - vorrei sapere il menu per favore
+    - vorrei sapere il menu di oggi per favore
+    - dimmi il menu per favore
+    - potrei sapere il menu della mensa?
+    - cosa c'è a mensa?
+    - cosa c'è da mangiare a mensa?
+    - che propone il menu?
+    - cosa c'è sul menu?
+    - cosa c'è di buono a mensa?
+    - dimmi il menu
+    - menu
+    - menu della mensa
+- intent: ask_lab
+  examples: |
+    - vorrei sapere le prenotazioni del laboratorio
+    - vorrei sapere le prenotazioni del laboratorio, per favore
+    - vorrei sapere le prenotazioni del lab
+    - le prenotazioni, per favore
+    - le prenotazioni
+    - dimmi le prenotazioni del laboratorio, per favore
+    - dimmi le prenotazioni del lab per favore
+    - potrei sapere le prenotazioni del laboratorio per favore?
+    - potrei sapere le prenotazioni del lab, per favore?
+    - chi ha prenotato il laboratorio?
+    - chi ha prenotato il lab?
+    - potrei sapere le prenotazioni del laboratorio, per favore?
+    - posso sapere le prenotazioni del laboratorio?
+    - posso sapere le prenotazioni del lab?
+    - le prenotazioni del laboratorio
+    - vorrei sapere gli orari del laboratorio
+- intent: room
+  examples: |
+    - sono interessato al lab [barry](room)
+    - sono interessato al laboratorio di [barry](room)
+    - vorrei sapere le prenotazioni del lab [reddy](room), per favore
+    - vorrei sapere le prenotazioni del laboratorio di [reddy](room)
+    - vorrei sapere le prenotazioni del laboratorio di [reddy](room), per favore
+    - [barry](room), per favore
+    - [reddy](room)
+    - [bery](room)
+    - [berri](room)
+    - [reddi](room)
+    - [beri](room)
+    - [redi](room)
+    - [berry](room)
+    - [redy](room)
+    - [redy](room)
+- intent: day
+  examples: |
+    - sono interessato alle prenotazioni di [oggi](day)
+    - vorrei sapere le prenotazioni di [domani](day)
+    - [domani](day), per favore
+    - vorrei sapere le prenotazioni di [lunedi](day)
+    - dimmi le prenotazioni di [martedi](day) per favore
+    - potresti dirmi le prenotazioni di [mercoledi](day), per favore?
+    - Chi ha prenotato il lab [giovedi](day)?
+    - Mi dici chi ha prenotato il lab [venerdi](day)?
+    - [sabato](day)
+    - [domenica](day)
+    - vorrei sapere gli orari di [oggi](day), per favore
+    - voglio sapere gli orari di [lunedi](day)
+    - [martedi](day)
+    - [oggi](day)

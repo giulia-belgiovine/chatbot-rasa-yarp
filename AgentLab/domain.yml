@@ -1,0 +1,96 @@
+version: "2.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - ask_menu
+  - ask_lab
+  - thankyou
+  - room
+  - day
+  - thank_you
+  - ask_info
+
+entities:
+  - room
+  - day
+
+actions:
+  - greet_recognize_name
+  - action_read_menu
+  - action_default_fallback
+  - action_read_lab
+
+slots:
+  room:
+    type: text
+    influence_conversation: true
+  day:
+    type: text
+    influence_conversation: true
+  rec_person:
+    type: text
+    influence_conversation: true
+
+responses:
+  utter_greet:
+  - text: "Ciao!"
+
+  utter_goodbye:
+  - text: "Ci si vede!"
+  - text: "Ciao ci vediamo!"
+  - text: "Ciao, stammi bene!"
+  - text: "Ciao, alla prossima!"
+
+  utter_default:
+  - text: "Scusami, non sono sicuro di aver capito. Puoi ripetere?"
+  - text: "Scusami, non sono sicuro di aver capito. Puoi ripetere?"
+  - text: "Scusami, ti dispiacerebbe ripetere?"
+  - text: "Scusa, non credo di aver capito. Ti dispiacerebbe ripetere?"
+  - text: "Scusa, potresti ripetere?"
+
+  utter_ask:
+  - text: "Come possso aiutarti? Posso dirti le prenotazioni del laboratorio oppure il menu della mensa di oggi!"
+  - text: "Come posso essere utile?? Quello che possso fare è dirti le prenotazioni del laboratorio oppure il menu della mensa di oggi!"
+  - text: "Vuoi sapere le prenotazioni del laboratorio oppure il menu di oggi della mensa?"
+  - text: "Cosa posso fare per te? Sai, posso dirti le prenotazioni del laboratorio oppure il menu della mensa?"
+
+  utter_info:
+  - text: "Posso dirti le prenotazioni del laboratorio oppure il menu della mensa di oggi!"
+  - text: "Quello che possso fare è dirti le prenotazioni del laboratorio oppure il menu della mensa di oggi!"
+  - text: "Sai, posso dirti le prenotazioni del laboratorio oppure il menu della mensa?"
+
+  utter_ask_second_time:
+  - text: "Allora cosa posso fare per te {rec_person}?"
+
+  utter_which_lab:
+    - text: "Quale laboratorio ti interessa sapere? Reddy o Barry?"
+
+  utter_answer_lab:
+    - text: "Certo! Ti dirò gli orari del laboratorio {room}!"
+
+  utter_ask_day:
+    - text: "Quale giorno ti interessa sapere?"
+
+  utter_greet_rec_person:
+    -  text: "Ciao {rec_person}! Che bello rivederti!"
+
+  utter_false_known:
+    - text: "Scusami, pensavo fossi {rec_person}"
+
+  utter_you_are_welcome:
+    - text: "Non c'è di che!"
+    - text: "è stato un piacere!"
+    - text: "il piacere è tutto mio!"
+    - text: "Spero di esserti stato d'aiuto!"
+
+
+

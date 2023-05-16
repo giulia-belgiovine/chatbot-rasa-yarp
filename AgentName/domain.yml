@@ -1,0 +1,199 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- affirm
+- age
+- greet
+- color
+- music
+- country
+- goodbye
+- deny
+- mood_great
+- mood_unhappy
+- out_of_scope
+- inform
+- thankyou
+
+
+entities:
+- age
+- color
+- country
+- music
+
+slots:
+  unknown_person:
+    type: bool
+  general:
+    type: text
+#  music:
+#    type: text
+#    influence_conversation: true
+  color:
+    type: text
+    influence_conversation: true
+  age:
+    type: float
+    influence_conversation: true
+    max_value: 100.0
+    min_value: 0.0
+  country:
+    type: text
+    influence_conversation: true
+  first_name:
+    type: text
+    influence_conversation: true
+  name_spelled_correctly:
+    type: bool
+    influence_conversation: true
+  quit_form:
+      type: bool
+      influence_conversation: true
+
+responses:
+  utter_greet:
+  - text: Ciao!
+  - text: hey!
+
+  utter_greet_person:
+    - condition:
+        - type: slot
+          name: unknown_person
+          value: True
+      text: "Ciao non ci conosciamo!"
+    - condition:
+        - type: slot
+          name: unknown_person
+          value: False
+      text: "Ciao {first_name} piacere di rivederti!"
+
+
+  utter_thanks:
+  - text: Grazie per aver risposto
+  - text: Grazie mille
+  - text: Provero a ricordarmi quello che mi hai detto
+  utter_goodbye:
+  - text: Ciao ci vediamo!
+  - text: Ciao, stammi bene!
+  - text: Ciao, alla prossima!
+  - text: Ciao, ci si vede!
+  utter_default:
+  - text: Scusami, non sono sicuro di aver capito. Puoi ripetere?
+  - text: Scusami, ti dispiacerebbe ripetere?
+  - text: Scusa, non credo di aver capito. Ti dispiacerebbe ripetere?
+  - text: Scusa, potresti ripetere?
+  utter_ask_first_name:
+  - text: Come ti chiami?
+  - text: Quale e il tuo nome?
+  utter_ask_name_spelled_correctly:
+  - text: Questo nome {first_name} e giusto?
+  - text: Ho capito come nome {first_name} e giusto?
+  utter_ask_color:
+  - text: Qual è il tuo colore preferito?
+  - text: Qual è il colore che preferisci?
+  - text: Hai un colore preferito?
+  - text: C'è un colore che preferisci?
+  utter_ask_age:
+  - text: Quanti anni hai?
+  - text: Posso chiederti qual è la tua età?
+  - text: qual è la tua età??
+  utter_ask_country:
+  - text: Di quale Paese sei originario??
+  - text: Da quale paese vieni?
+  - text: Qual è il tuo paese di origine??
+  utter_ask_music:
+  - text: Qual è il tuo genere musicale preferito??
+  - text: Che musica ascolti?
+  - text: Che genere di musica ascolti???
+  utter_incorrect_name:
+  - text: Scusami non ho ben capito il tuo nome
+  - text: 'Scusa ! '
+  utter_name_too_short:
+  - text: E molto corto come nome penso che non ho capito bene.
+  utter_name_not_in_list:
+  - text: Penso che non ho capito bene mi puoi ripetere il tuo nome per favore?
+  - text: Credo che ho ben capito, mi puoi ripetere il tuo nome?
+  utter_tellme_aboutyou:
+  - text: Raccontami un po' di te. Cosa fai nella vita?
+
+  utter_check_gender_female:
+  - text: Allora è corretto dire che il tuo genere è femminile?
+  utter_check_gender_male:
+  - text: Allora è corretto dire che il tuo genere è maschile?
+  utter_check_gender_other:
+  - text: Vuoi specificare qual è il tuo genere (non binario o altro)?
+  utter_answer_color:
+  - text: Che bello! Anche a me piace il {color}!
+  - text: Davvero? Il {color} è anche il mio colore preferito
+  - text: Anche secondo me il {color} è un bellissimo colore
+  - text: Interessante! Grazie per averlo condiviso
+  utter_answer_age:
+  - text: Grazie! proverò a ricordarlo
+  - text: Grazie per averlo condiviso
+  - text: Ok! Lo ricorderò
+  utter_answer_country:
+  - text: Bello! Ho molti amici che vengono da {country}
+  - text: Penso che {country} sia un paese bellissimo
+  - text: Bene! {country} è un paese meraviglioso
+  utter_answer_music:
+  - text: Che forte! Amo il {music}
+  - text: la musica {music} è bella ma io preferisco il rock!
+  - text: Bello! Anche a me piace ascoltare la musica {music}!
+  utter_answer_first_name:
+  - text: Bellisimo nome {first_name}
+  - text: piacere di conoscerti {first_name}
+  utter_slots_values:
+  - text: slotValues- {first_name},{age},{country},{color}
+  utter_known_person:
+  - text: Ah ma sei tu {first_name}!
+  - text: Non ti avevo riconoscituo {first_name}
+
+
+actions:
+- action_default_fallback
+- action_restart
+- utter_greet
+- utter_thanks
+- validate_generalinfo_form
+- save_new_person
+- action_wrong_person
+- action_retrieve_information
+
+forms:
+  generalinfo_form:
+    required_slots:
+      first_name:
+      - type: from_text
+
+      name_spelled_correctly:
+      - type: from_text
+
+      age:
+      - type: from_entity
+        intent: age
+        entity: age
+        not_intent: color, music
+
+      country:
+      - type: from_text
+#        entity: country
+#        not_intent: age, color, music
+
+      color:
+      - type: from_entity
+        intent: color
+        entity: color
+        not_intent: age, music
+
+      general:
+      - type: from_text
+
+#      music:
+#      - type: from_entity
+#        intent: music
+#        entity: music
+#        not_intent: age, color
