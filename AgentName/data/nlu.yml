@@ -80,15 +80,7 @@ nlu:
     - non molto bene
     - ho avuto una brutta giornata
 
-- intent: gender
-  examples: |
-    - si sono una [donna](gender)
-    - si, il mio genere è [femminile](gender)
-    - si sono un [uomo](gender)
-    - si, il mio genere è [maschile](gender)
-    - il mio genere è [femmina](gender)
-    - il mio genere è [maschio](gender)
-    - Preferisco non specificare
+
 - intent: color
   examples: |
     - Il mio colore preferito è [rosso](color)
@@ -102,6 +94,7 @@ nlu:
     - [viola](color)
     - [rosso](color)
     - [giallo](color)
+
 - intent: age
   examples: |
     - Ho [21](age) anni
@@ -110,21 +103,7 @@ nlu:
     - io ho [23](age) anni
     - [28](age)
     - ho [24](age) anni
-#- intent: country
-#  examples: |
-#    - Io vengo dall'[Italia](country)
-#    - [Francia](country)
-#    - [Germania](country)
-#    - Il mio paese d'origine è la [Spagna](country)
-#    - [Colombia](country)
-#    - [Estonia](country)
-#    - [Australia](country)
-#    - [congo](country)
-#    - [bulgaria](country)
-#    - [Grenada](country)
-#    - [Honduras](country)
-#    - [Kazakhstan](country)
-#    - [francia](country)
+
 - intent: music
   examples: |
     - A me piace la musica [rock](music)
@@ -144,25 +123,8 @@ nlu:
 - intent: nlu_fallback
   examples: |
     - pollo fritto
-    - brebis
-#
-#- intent: first_name
-#  examples: |
-#    - mi chiamo [jonas](first_name)
-#    - [franco](first_name)
-#    - Mi chiamo [alessandra](first_name)
-#    - mi chiamo [francesco](first_name)
-#    - il mio nome e [marco](first_name)
-#    - [Matthew](first_name)
-#    - [Daniel](first_name)
-#    - [James](first_name)
-#    - [Sarah](first_name)
-#    - [Anthony](first_name)
-#    - [Antoine](first_name)
-#    - mi chiamo [mathieu](first_name)
-#    - mi chiamo [jules](first_name)
-#    - mi chiamo [damiens](first_name)
-#    - [Jonas](first_name)
+
+
 - lookup: color
   examples: |
     - rosso
